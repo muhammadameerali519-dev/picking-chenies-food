@@ -1,0 +1,6 @@
+{
+  "name": "Picking Chinese Food",
+  "description": "A premium luxury Chinese and Asian cuisine restaurant website with interactive WhatsApp ordering and Chef Dragon AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
