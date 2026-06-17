@@ -14,15 +14,6 @@ export const CATEGORIES = [
 export const MENU_ITEMS: MenuItem[] = [
   // --- STARTERS ---
   {
-    id: 'starter-1',
-    name: 'Drum Stick Plate',
-    price: 2000,
-    description: 'Crispy, premium hand-crafted chicken drumsticks, seasoned with executive Chinese herbs, served with golden plum dipping glaze.',
-    category: 'starters',
-    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&q=80&w=600',
-    quantityInfo: '1 Plate'
-  },
-  {
     id: 'starter-2',
     name: 'Dhaka Chicken',
     price: 1200,
@@ -62,7 +53,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 1200,
     description: 'Gourmet thin crispy pastry sheets rolled with spiced fresh vegetables and luxurious minced chicken.',
     category: 'starters',
-    image: 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/spring_roll_1781655381821.jpg',
     quantityInfo: '3 Pcs',
     isBestSeller: true
   },
@@ -229,7 +220,7 @@ export const MENU_ITEMS: MenuItem[] = [
     fullPrice: 1000,
     description: 'Creamy, comforting classic soup loaded with crushed sweet corn kernels and minced organic chicken.',
     category: 'soups',
-    image: 'https://images.unsplash.com/photo-1625220194771-7ebedd0870b?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/chicken_corn_soup_1781655420202.jpg',
     isBestSeller: true
   },
   {
@@ -342,7 +333,7 @@ export const MENU_ITEMS: MenuItem[] = [
     fullPrice: 1650,
     description: 'The crown gem of Chinese fusion. Juicy chicken droplets in a luxurious, sweet-tangy spicy imperial red glaze.',
     category: 'chicken-gravy',
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/chicken_manchurian_1781654743173.jpg',
     isBestSeller: true,
     isChefRecommended: true
   },
@@ -436,7 +427,7 @@ export const MENU_ITEMS: MenuItem[] = [
     fullPrice: 2400,
     description: 'Pristine ocean-harvested prawns wrapped in magnificent ginger-garlic Manchurian red glaze, extremely luxurious.',
     category: 'prawn-gravy',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/prawns_manchurian_1781654952583.jpg',
     isBestSeller: true,
     isChefRecommended: true
   },
@@ -498,7 +489,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 1550,
     description: 'Imperial wok-tossed long wheat hand-stretched noodles, thick chicken slices, prawns, and premium garden vegetables, seasoned beautifully.',
     category: 'noodles',
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/special_chowmein_1781655401720.jpg',
     isBestSeller: true,
     isChefRecommended: true
   },
@@ -678,7 +669,7 @@ export const BEST_SELLERS = [
     category: 'Chicken Gravy',
     price: 'Rs. 1300 / 1650',
     description: 'The golden crown jewel of Chinese fusion. Crispy chicken in deep red, sweet-tangy spicy glaze.',
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/chicken_manchurian_1781654743173.jpg',
     link: 'Chicken Manchurian'
   },
   {
@@ -686,8 +677,8 @@ export const BEST_SELLERS = [
     name: 'Special chowmein',
     category: 'Noodles',
     price: 'Rs. 1250 / 1550',
-    description: 'Gourmet wheat noodles wok-tossed with loads of chicken, prawns, vegetables, and imperial spices.',
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=600',
+    description: 'Gourmet wheat noodles wok-tossed with loads of chicken, prawns, vegetables, and culinary spices.',
+    image: '/src/assets/images/special_chowmein_1781655401720.jpg',
     link: 'Special Chowmin'
   },
   {
@@ -696,7 +687,7 @@ export const BEST_SELLERS = [
     category: 'Starters',
     price: 'Rs. 1200',
     description: 'Crispiest pastry layers enveloping a masterfully seasoned combination of minced chicken and veggies.',
-    image: 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/spring_roll_1781655381821.jpg',
     link: 'Spring Roll'
   },
   {
@@ -705,7 +696,7 @@ export const BEST_SELLERS = [
     category: 'Soups',
     price: 'Rs. 550 / 1000',
     description: 'Comfort broth carrying sweet golden corn shreds, eggs drops, and simmered hand-minced chicken.',
-    image: 'https://images.unsplash.com/photo-1625220194771-7ebedd0870b?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/chicken_corn_soup_1781655420202.jpg',
     link: 'Chicken Corn Soup'
   },
   {
@@ -714,7 +705,7 @@ export const BEST_SELLERS = [
     category: 'Prawn Gravy',
     price: 'Rs. 1800 / 2400',
     description: 'The oceanic standard of luxury. Stir-fried massive prawns soaked in garlic-loaded ginger Manchurian glaze.',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=600',
+    image: '/src/assets/images/prawns_manchurian_1781654952583.jpg',
     link: 'Prawns Manchurian'
   },
   {
@@ -729,10 +720,10 @@ export const BEST_SELLERS = [
 ];
 
 export const GALLERY_ITEMS = [
-  { id: 'gal-1', title: 'Wok Master Noodles', image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=600', category: 'Noodles' },
-  { id: 'gal-2', title: 'Imperial Manchurian Glaze', image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&q=80&w=600', category: 'Manchurian' },
+  { id: 'gal-1', title: 'Wok Master Noodles', image: '/src/assets/images/special_chowmein_1781655401720.jpg', category: 'Noodles' },
+  { id: 'gal-2', title: 'Imperial Manchurian Glaze', image: '/src/assets/images/chicken_manchurian_1781654743173.jpg', category: 'Manchurian' },
   { id: 'gal-3', title: 'Velvety Hot & Sour Broth', image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=600', category: 'Soups' },
-  { id: 'gal-4', title: 'Royal Crunchy Spring Rolls', image: 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&q=80&w=600', category: 'Spring Rolls' },
+  { id: 'gal-4', title: 'Royal Crunchy Spring Rolls', image: '/src/assets/images/spring_roll_1781655381821.jpg', category: 'Spring Rolls' },
   { id: 'gal-5', title: 'Wok Toss Fried Rice', image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&q=80&w=600', category: 'Fried Rice' },
   { id: 'gal-6', title: 'Gourmet King Prawn Batter', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=600', category: 'Prawns' },
   { id: 'gal-7', title: 'Plated Dhaka Sea Bass', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=600', category: 'Seafood' },

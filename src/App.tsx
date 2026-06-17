@@ -188,12 +188,16 @@ export default function App() {
       {/* 2. Full-Screen luxury animated Hero Section */}
       <header 
         id="home"
-        className="relative min-h-screen flex items-center justify-center pt-32 pb-16 overflow-hidden bg-gradient-to-b from-[#050505] via-[#0c0c0e] to-[#050505]"
+        className="relative min-h-screen flex items-center justify-center pt-32 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/src/assets/images/hero_branding_banner_1781656222095.jpg')` }}
       >
+        {/* Dark Vignette Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black via-black/93 to-black/80 z-0"></div>
+
         {/* Particle Overlay */}
-        <div className="absolute inset-0 select-none pointer-events-none opacity-20">
-          <div className="absolute top-[10%] left-[10%] h-[300px] w-[300px] rounded-full bg-[#D4AF37]/10 blur-[150px]"></div>
-          <div className="absolute bottom-[10%] right-[10%] h-[300px] w-[300px] rounded-full bg-yellow-400/5 blur-[120px]"></div>
+        <div className="absolute inset-0 select-none pointer-events-none opacity-30 z-0">
+          <div className="absolute top-[10%] left-[10%] h-[300px] w-[300px] rounded-full bg-[#D4AF37]/15 blur-[150px]"></div>
+          <div className="absolute bottom-[10%] right-[10%] h-[300px] w-[300px] rounded-full bg-yellow-400/10 blur-[120px]"></div>
           
           {/* Gold Particles Background Overlay as modeled on the theme design */}
           <div className="absolute top-20 left-40 w-1 h-1 bg-[#D4AF37] rounded-full"></div>

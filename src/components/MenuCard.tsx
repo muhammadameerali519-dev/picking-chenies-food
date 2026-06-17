@@ -59,83 +59,76 @@ export default function MenuCard({ item }: MenuCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6 }}
-      className="group relative flex flex-col rounded-none border border-zinc-800 bg-[#0c0c0e] p-4 shadow-2xl transition-all duration-300 hover:border-[#D4AF37] hover:bg-black hover:shadow-[0_0_40px_rgba(212,175,55,0.15)] overflow-hidden cursor-pointer"
+      className="group relative flex flex-col justify-between rounded-none border border-zinc-800 bg-[#0c0c0e] p-6 shadow-2xl transition-all duration-300 hover:border-[#D4AF37] hover:bg-black hover:shadow-[0_0_40px_rgba(212,175,55,0.15)] overflow-hidden cursor-pointer min-h-[220px]"
     >
       {/* 3D glow overlay */}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-500"></div>
 
-      {/* Food Image Container */}
-      <div className="relative h-48 w-full overflow-hidden rounded-none bg-[#050505] border border-zinc-900">
-        <img
-          src={item.image}
-          alt={item.name}
-          referrerPolicy="no-referrer"
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
-        {/* Shadow Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-transparent"></div>
+      {/* Content Block */}
+      <div className="flex-1 flex flex-col h-full justify-between">
+        <div>
+          {/* Badges / Meta row */}
+          <div className="flex flex-wrap items-center gap-1.5 mb-3.5 select-none">
+            {item.isBestSeller && (
+              <span className="flex items-center gap-1 rounded-none bg-red-650/10 border border-red-500/20 px-2 py-0.5 text-[8px] font-black tracking-[0.2em] text-red-400 uppercase">
+                <Crown className="h-2 w-2 fill-red-400" /> BEST SELLER
+              </span>
+            )}
+            {item.isChefRecommended && (
+              <span className="flex items-center gap-1 rounded-none bg-[#D4AF37]/10 border border-[#D4AF37]/20 px-2 py-0.5 text-[8px] font-black tracking-[0.2em] text-[#D4AF37] uppercase">
+                <Award className="h-2 w-2" /> RECOMMENDED
+              </span>
+            )}
+            {item.quantityInfo && (
+              <span className="rounded-none bg-zinc-900 border border-zinc-800 px-2 py-0.5 font-mono text-[8.5px] font-bold text-zinc-400 tracking-wider uppercase">
+                {item.quantityInfo}
+              </span>
+            )}
+          </div>
 
-        {/* Floating Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 select-none">
-          {item.isBestSeller && (
-            <span className="flex items-center gap-1 rounded-none bg-red-600 px-2.5 py-1 text-[9px] font-black tracking-[0.2em] text-white uppercase shadow-lg border border-red-500">
-              <Crown className="h-2.5 w-2.5 fill-white" /> BEST SELLER
-            </span>
-          )}
-          {item.isChefRecommended && (
-            <span className="flex items-center gap-1 rounded-none bg-[#D4AF37] px-2.5 py-1 text-[9px] font-black tracking-[0.2em] text-black uppercase shadow-lg border border-[#FFD700]/20">
-              <Award className="h-2.5 w-2.5" /> RECOMMENDED
-            </span>
+          <h3 className="font-sans text-base font-black uppercase tracking-tight text-white group-hover:text-[#D4AF37] transition duration-300 leading-tight">
+            {item.name}
+          </h3>
+          
+          <p className="mt-2 text-[11px] leading-relaxed text-zinc-400 font-sans line-clamp-2">
+            {item.description}
+          </p>
+
+          {/* Portion Selector for half/full dishes */}
+          {hasMultipleSizes && (
+            <div className="mt-3.5 flex items-center justify-between rounded-none bg-black p-1 border border-zinc-850">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedSize('half');
+                }}
+                className={`flex-1 rounded-none py-1 text-[8.5px] font-black tracking-[0.15em] uppercase transition ${
+                  selectedSize === 'half'
+                    ? 'bg-[#D4AF37] text-black font-extrabold'
+                    : 'text-zinc-550 hover:text-white'
+                }`}
+              >
+                Half
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedSize('full');
+                }}
+                className={`flex-1 rounded-none py-1 text-[8.5px] font-black tracking-[0.15em] uppercase transition ${
+                  selectedSize === 'full'
+                    ? 'bg-[#D4AF37] text-black font-extrabold'
+                    : 'text-zinc-550 hover:text-white'
+                }`}
+              >
+                Full
+              </button>
+            </div>
           )}
         </div>
 
-        {/* Short Quantity info Badge */}
-        {item.quantityInfo && (
-          <span className="absolute bottom-3 right-3 rounded-none bg-black border border-zinc-800 px-2.5 py-1 font-mono text-[9px] font-bold text-[#D4AF37] tracking-wider uppercase">
-            {item.quantityInfo}
-          </span>
-        )}
-      </div>
-
-      {/* Content Block */}
-      <div className="flex-1 flex flex-col pt-5 pb-2">
-        <h3 className="font-sans text-base font-black uppercase tracking-tight text-white group-hover:text-[#D4AF37] transition duration-300 leading-tight">
-          {item.name}
-        </h3>
-        
-        <p className="mt-2 text-[11px] leading-relaxed text-zinc-400 font-sans line-clamp-2">
-          {item.description}
-        </p>
-
-        {/* Portion Selector for half/full dishes */}
-        {hasMultipleSizes && (
-          <div className="mt-4 flex items-center justify-between rounded-none bg-black p-1 border border-zinc-800">
-            <button
-              onClick={() => setSelectedSize('half')}
-              className={`flex-1 rounded-none py-1.5 text-[9px] font-black tracking-[0.15em] uppercase transition ${
-                selectedSize === 'half'
-                  ? 'bg-[#D4AF37] text-black font-extrabold'
-                  : 'text-zinc-500 hover:text-white'
-              }`}
-            >
-              Half
-            </button>
-            <button
-              onClick={() => setSelectedSize('full')}
-              className={`flex-1 rounded-none py-1.5 text-[9px] font-black tracking-[0.15em] uppercase transition ${
-                selectedSize === 'full'
-                  ? 'bg-[#D4AF37] text-black font-extrabold'
-                  : 'text-zinc-500 hover:text-white'
-              }`}
-            >
-              Full
-            </button>
-          </div>
-        )}
-
         {/* Price & Order CTA Row */}
-        <div className="mt-auto pt-4 flex items-center justify-between border-t border-zinc-900">
+        <div className="mt-5 pt-4 flex items-center justify-between border-t border-zinc-900">
           <div>
             <span className="text-[9px] font-mono tracking-[0.2em] uppercase text-zinc-500 block font-bold">
               INVESTMENT
@@ -146,7 +139,10 @@ export default function MenuCard({ item }: MenuCardProps) {
           </div>
 
           <button
-            onClick={handleOrder}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleOrder();
+            }}
             className="flex items-center gap-1.5 rounded-none bg-white text-black px-4 py-2.5 text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-300 hover:bg-[#D4AF37] hover:scale-105 active:scale-95 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] cursor-pointer"
           >
             ORDER

@@ -87,7 +87,6 @@ Guidelines for inquiries about ownership:
 
 Complete Menu details with prices:
 STARTERS:
-- Drum Stick Plate – Rs. 2000
 - Dhaka Chicken – Rs. 1200
 - Finger Chicken – Rs. 1200
 - Coconut Chicken (8 Pcs) – Rs. 1200
